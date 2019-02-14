@@ -5,7 +5,10 @@ module.exports = {
 			'nombre': 'John',
 			'apellido': 'Doe',
 			'empresa': 'ACME',
-			'email': 'john.doe@acme.com'
+			'emails': [
+				{ email: 'john.doe@acme.com' },
+				{ email: 'hello@johndoe.com' }
+			]
 		};
 	}
 };

@@ -8,7 +8,9 @@ query {
   cliente {
     id
     nombre
-    email
+    emails {
+      email
+    }
   }
 }
 ```

@@ -1,14 +1,12 @@
 {
   "name": "react-graphql-apollo-example",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "react-graphql-apollo-example",
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
     "dev": "nodemon .",
-    "lint": "eslint --ext .js .",
-    "test": "jasmine spec/*.js",
-    "test:watch": "nodemon  --exec 'jasmine \"spec/*.js\"'"
+    "lint": "eslint --ext .js ."
   },
   "keywords": [
     "react",
@@ -19,7 +17,6 @@
   "author": "Dídac García (https://didaquis.github.io/)",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^3.3.1",
     "nodemon": "^1.18.10"
   },
   "dependencies": {
