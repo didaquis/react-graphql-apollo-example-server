@@ -8,9 +8,25 @@ query {
   cliente {
     id
     nombre
-    emails {
-      email
-    }
+    email
+  }
+}
+```
+
+Example of mutation:
+```
+mutation {
+  crearCliente(input: {
+    nombre: "Dídac"
+  	apellido: "García"
+    empresa: "ACME"
+    email: "d.g@acme.com"
+  }) {
+    id
+    nombre
+    apellido
+    empresa
+    email
   }
 }
 ```

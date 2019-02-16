@@ -1,3 +1,7 @@
+
+const {clientesDB} = require('../database');
+const {Cliente} = require('../classes/Cliente');
+
 module.exports = {
 	cliente: () => {
 		return {
@@ -5,10 +9,13 @@ module.exports = {
 			'nombre': 'John',
 			'apellido': 'Doe',
 			'empresa': 'ACME',
-			'emails': [
-				{ email: 'john.doe@acme.com' },
-				{ email: 'hello@johndoe.com' }
-			]
+			'email': 'john.doe@acme.com'
 		};
+	}, 
+	crearCliente: ({ input }) => {
+		const numberOfBytes = 10;
+		const id = require('crypto').randomBytes(numberOfBytes).toString('hex');
+		clientesDB[id] = input;
+		return new Cliente(id, input);
 	}
 };
