@@ -12,6 +12,12 @@ mutation {
     empresa: "ACME"
     email: "d.g@acme.com"
     tipo: BASICO
+    pedidos: [
+      {
+        producto: "Ordenador"
+        precio: 999
+      }
+    ]
   }) {
     id
     nombre
@@ -19,6 +25,10 @@ mutation {
     empresa
     email
     tipo
+    pedidos {
+      producto
+      precio
+    }
   }
 }
 ```
@@ -26,8 +36,12 @@ mutation {
 Example of query (use a valid id):
 ```
 query {
-  getCliente(id: "7c08f8d6c24eeb56fe93"){
+  getCliente(id: "981cb9f73ee26396a13c"){
     nombre
+    pedidos {
+      precio
+      producto
+    }
   }
 }
 ```
