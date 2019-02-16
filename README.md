@@ -11,12 +11,14 @@ mutation {
   	apellido: "García"
     empresa: "ACME"
     email: "d.g@acme.com"
+    tipo: BASICO
   }) {
     id
     nombre
     apellido
     empresa
     email
+    tipo
   }
 }
 ```
