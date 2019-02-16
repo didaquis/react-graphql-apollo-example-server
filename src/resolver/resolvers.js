@@ -3,15 +3,9 @@ const {clientesDB} = require('../database');
 const {Cliente} = require('../classes/Cliente');
 
 module.exports = {
-	cliente: () => {
-		return {
-			'id': '666',
-			'nombre': 'John',
-			'apellido': 'Doe',
-			'empresa': 'ACME',
-			'email': 'john.doe@acme.com'
-		};
-	}, 
+	getCliente: ({id}) => {
+		return new Cliente(id, clientesDB[id]);
+	},
 	crearCliente: ({ input }) => {
 		const numberOfBytes = 10;
 		const id = require('crypto').randomBytes(numberOfBytes).toString('hex');

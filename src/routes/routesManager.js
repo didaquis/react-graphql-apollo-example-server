@@ -8,14 +8,13 @@ routesManager.get('/', (req, res) => {
 const graphqlHTTP = require('express-graphql');
 
 const schema = require('../schema/schema'); /* GraphQL schema */
-const root = require('../resolver/resolver'); /* GraphQL resolver */
+const resolvers = require('../resolver/resolvers'); /* GraphQL resolver */
 
 routesManager.use('/graphql', graphqlHTTP(
 	{
 		schema: schema, // schema a utilizar
-		rootValue: root, // resolver a utilizar
+		rootValue: resolvers, // resolvers a utilizar
 		graphiql: true // habilitamos graphiql
-
 	}
 ));
 

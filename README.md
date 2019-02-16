@@ -2,18 +2,8 @@
 
 WIP
 
-Example of query:
-```
-query {
-  cliente {
-    id
-    nombre
-    email
-  }
-}
-```
 
-Example of mutation:
+Example of mutation (returns an id):
 ```
 mutation {
   crearCliente(input: {
@@ -27,6 +17,15 @@ mutation {
     apellido
     empresa
     email
+  }
+}
+```
+
+Example of query (use a valid id):
+```
+query {
+  getCliente(id: "7c08f8d6c24eeb56fe93"){
+    nombre
   }
 }
 ```
