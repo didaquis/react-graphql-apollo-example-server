@@ -45,3 +45,6 @@ query {
   }
 }
 ```
+
+## Requirements:
+* MongoDB service running
