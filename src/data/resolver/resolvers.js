@@ -2,8 +2,7 @@
 const { clientesDB } = require('../../database');
 const { Cliente } = require('../../classes/Cliente');
 
-const mongoose = require('mongoose');
-const clientes = require('../db');
+const Clientes = require('../db');
 
 module.exports = {
 	Query: {
@@ -13,10 +12,26 @@ module.exports = {
 	},
 	Mutation: {
 		crearCliente: (root, { input }) => {
-			const numberOfBytes = 10;
-			const id = require('crypto').randomBytes(numberOfBytes).toString('hex');
-			clientesDB[id] = input;
-			return new Cliente(id, input);
+			const nuevoCliente = new Clientes({
+				nombre: input.nombre,
+				apellido: input.apellido,
+				empresa: input.empresa,
+				email: input.email,
+				tipo: input.tipo,
+				pedidos: input.pedidos
+			});
+
+			nuevoCliente.id = nuevoCliente._id;
+
+			return new Promise((resolve, reject) => {
+				nuevoCliente.save((error) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(nuevoCliente);
+					}
+				});
+			});
 		}
 	}
 };
