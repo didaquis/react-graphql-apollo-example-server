@@ -9,7 +9,7 @@ type Cliente {
 	pedidos: [Pedido]
 }
 
-""" Campos para los pedidos nuevos """
+""" Campos para definir un pedido """
 type Pedido {
 	producto: String
 	precio: Int
@@ -26,7 +26,7 @@ type Query {
 	getCliente(id: ID): Cliente
 }
 
-""" Campos para los clientes nuevos """
+""" Campos para definir un cliente """
 input ClienteInput {
 	id: ID
 	nombre: String!
@@ -47,4 +47,7 @@ type Mutation {
 	""" Te permite crear nuevos clientes """
 	# Nombre del resolver (Input con datos): Valor que retorna
 	crearCliente(input: ClienteInput): Cliente
+
+	""" Te permite actualizar los datos de un cliente """
+	actualizarCliente(input: ClienteInput): Cliente
 }
