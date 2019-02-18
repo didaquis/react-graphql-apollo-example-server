@@ -1,13 +1,18 @@
 
-const { clientesDB } = require('../../database');
-const { Cliente } = require('../../classes/Cliente');
-
 const Clientes = require('../db');
 
 module.exports = {
 	Query: {
-		getCliente: (root, { id }) => {
-			return new Cliente(id, clientesDB[id]);
+		getClientes: () => {
+			return new Promise((resolve, reject) => {
+				Clientes.find({}, (error, clientes) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(clientes);
+					}
+				});
+			});
 		}
 	},
 	Mutation: {
@@ -50,7 +55,7 @@ module.exports = {
 					if (error) {
 						reject(error);
 					} else {
-						resolve("Se ha eliminado el cliente");
+						resolve('Se ha eliminado el cliente');
 					}
 				});
 			});

@@ -21,8 +21,11 @@ enum TipoCliente {
 	PREMIUM
 }
 
-""" Obten los datos de un cliente (especificando su id) """
 type Query {
+	""" Obten los datos de todos los clientes """
+	getClientes: [Cliente]
+
+	""" Obten los datos de un cliente (especificando su id) """
 	getCliente(id: ID): Cliente
 }
 
