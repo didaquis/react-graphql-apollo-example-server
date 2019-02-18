@@ -1,5 +1,4 @@
-
-const Clientes = require('../db');
+const { Clientes } = require('../../models/index');
 
 module.exports = {
 	Query: {

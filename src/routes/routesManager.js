@@ -7,7 +7,7 @@ routesManager.get('/', (req, res) => {
 
 const graphqlHTTP = require('express-graphql');
 
-const schema = require('../data/schema/schema'); /* GraphQL schema */
+const schema = require('../gql/schema/schema'); /* GraphQL schema */
 
 routesManager.use('/graphql', graphqlHTTP(
 	{

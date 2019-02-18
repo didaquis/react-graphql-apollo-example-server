@@ -69,3 +69,4 @@ mutation {
 
 ## Requirements:
 * MongoDB service running
+* Configure `.env` file
