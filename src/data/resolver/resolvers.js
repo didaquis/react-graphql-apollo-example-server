@@ -43,6 +43,17 @@ module.exports = {
 					}
 				});
 			});
+		},
+		eliminarCliente: (root, { id }) => {
+			return new Promise((resolve, reject) => {
+				Clientes.findOneAndDelete({ _id: id }, (error) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve("Se ha eliminado el cliente");
+					}
+				});
+			});
 		}
 	}
 };

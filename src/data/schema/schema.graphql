@@ -50,4 +50,7 @@ type Mutation {
 
 	""" Te permite actualizar los datos de un cliente """
 	actualizarCliente(input: ClienteInput): Cliente
+
+	""" Te permite eliminar un cliente """
+	eliminarCliente(id: ID): String
 }

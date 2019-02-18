@@ -33,6 +33,22 @@ mutation {
 }
 ```
 
+Example of mutation (use a valid id):
+```
+mutation {
+  actualizarCliente (input: {
+    id: "5c69e674263fbe7abfb624a3"
+    nombre:"John"
+    apellido: "Doe"
+    empresa: "ACME"
+    email: "j.d@acme.com"
+    tipo: PREMIUM
+  }) {
+    nombre
+  }
+}
+```
+
 Example of query (use a valid id):
 ```
 query {
@@ -43,6 +59,13 @@ query {
       producto
     }
   }
+}
+```
+
+Example of query (use a valid id):
+```
+mutation {
+  eliminarCliente (id: "5c69e674263fbe7abfb624a3") 
 }
 ```
 
