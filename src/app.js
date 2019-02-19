@@ -16,7 +16,10 @@ if (mongoUser !== '' && mongoPass !== '') {
 }
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, '\nConnection error with database:')); // eslint-disable-line no-console
+db.on('error', (err) => {
+	console.error(`\nConnection error with database. ${err}`); // eslint-disable-line no-console
+});
+
 db.once('open', () => {
 	console.log(`\nConnected with mongodb at "${host}" in port "${port}" using database "${database}"`); // eslint-disable-line no-console
 
