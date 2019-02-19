@@ -1,6 +1,6 @@
 {
   "name": "react-graphql-apollo-example",
-  "version": "0.1.13",
+  "version": "0.1.14",
   "description": "react-graphql-apollo-example",
   "main": "src/app.js",
   "scripts": {
@@ -26,6 +26,6 @@
     "graphql": "^14.1.1",
     "graphql-import": "^0.7.1",
     "graphql-tools": "^4.0.4",
-    "mongoose": "^5.4.13"
+    "mongoose": "^5.4.14"
   }
 }

@@ -1,7 +1,22 @@
 # react-graphql-apollo-example
 
-WIP
+## **WIP** ⚠️
 
+This repo is an example of application made with React + GraphQL + Apollo.
+
+### Requirements:
+* MongoDB service running
+* Node.js 9.4 or higher
+* Configure the application:
+  * Edit the configuration in file `_env`
+  * Rename the file `_env` to `.env`
+
+### Execute the application:
+* Execute script with `node .` or `npm start`
+
+## For development:
+* For run app: `npm run dev`
+* For run linter: `npm run lint`
 
 Example of mutation (returns an id):
 ```
@@ -66,7 +81,3 @@ mutation {
   eliminarCliente (id: "5c69e674263fbe7abfb624a3")
 }
 ```
-
-## Requirements:
-* MongoDB service running
-* Configure `.env` file
