@@ -64,7 +64,7 @@ mutation {
 }
 ```
 
-Example of query (use a valid id):
+Example of query:
 ```
 query {
   getClientes {
@@ -76,6 +76,16 @@ query {
 ```
 
 Example of query (use a valid id):
+```
+query {
+  getCliente (id: "5c69e674263fbe7abfb624a3"){
+    id
+    nombre
+  }
+}
+```
+
+Example of mutation (use a valid id):
 ```
 mutation {
   eliminarCliente (id: "5c69e674263fbe7abfb624a3")

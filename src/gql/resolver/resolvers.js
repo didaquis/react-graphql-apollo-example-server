@@ -2,16 +2,11 @@ const { Clientes } = require('../../models/index');
 
 module.exports = {
 	Query: {
-		getClientes: () => {
-			return new Promise((resolve, reject) => {
-				Clientes.find({}, (error, clientes) => {
-					if (error) {
-						reject(error);
-					} else {
-						resolve(clientes);
-					}
-				});
-			});
+		getClientes: (root, { limite }) => {
+			return Clientes.find({}).limit(limite);
+		},
+		getCliente: (root, { id }) => {
+			return Clientes.findOne({ _id: id });
 		}
 	},
 	Mutation: {
