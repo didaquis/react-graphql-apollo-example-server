@@ -6,7 +6,15 @@ module.exports = {
 			return Clientes.find({}).limit(limite);
 		},
 		getCliente: (root, { id }) => {
-			return Clientes.findOne({ _id: id });
+			return new Promise((resolve, reject) => {
+				Clientes.findById(id, (error, cliente) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(cliente);
+					}
+				});
+			});
 		}
 	},
 	Mutation: {
