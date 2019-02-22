@@ -1,4 +1,4 @@
-# react-graphql-apollo-example
+# react-graphql-apollo-example (server)
 
 ## **WIP** ⚠️
 

@@ -1,7 +1,7 @@
 {
-  "name": "react-graphql-apollo-example",
-  "version": "0.1.16",
-  "description": "react-graphql-apollo-example",
+  "name": "react-graphql-apollo-example-server",
+  "version": "0.1.17",
+  "description": "react-graphql-apollo-example-server",
   "main": "src/app.js",
   "scripts": {
     "start": "node .",
@@ -12,7 +12,8 @@
     "react",
     "graphql",
     "apollo",
-    "example"
+    "example",
+    "server"
   ],
   "author": "Dídac García (https://didaquis.github.io/)",
   "license": "ISC",
