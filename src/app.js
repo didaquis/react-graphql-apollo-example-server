@@ -1,6 +1,7 @@
 'use strict';
 
 require('dotenv').config();
+const cors = require('cors');
 
 const host = process.env.MONGO_HOST;
 const port = process.env.MONGO_PORT;
@@ -29,6 +30,8 @@ db.once('open', () => {
 const initApplication = () => {
 	const express = require('express');
 	const app = express();
+	app.use(cors());
+
 	const { ApolloServer } = require('apollo-server-express');
 
 	const typeDefs = require('./gql/schema/schema'); /* GraphQL schema */
