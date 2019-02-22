@@ -4,6 +4,8 @@
 
 This repo is an example of application made with React + GraphQL + Apollo.
 
+This repository is made to work with: https://github.com/didaquis/react-graphql-apollo-example-client
+
 ### Requirements:
 * MongoDB service running
 * Node.js 9.4 or higher
