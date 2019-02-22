@@ -29,9 +29,19 @@ db.once('open', () => {
 const initApplication = () => {
 	const express = require('express');
 	const app = express();
+	const { ApolloServer } = require('apollo-server-express');
+
+	const typeDefs = require('./gql/schema/schema'); /* GraphQL schema */
+	const resolvers = require('./gql/resolver/resolvers'); /* GraphQL resolvers */
 
 	const routesManager = require('./routes/routesManager');
 	app.use('', routesManager);
+
+	const server = new ApolloServer({ typeDefs, resolvers });
+
+	server.applyMiddleware({app});
+
+
 
 	app.use((req, res) => {
 		res.status(404).send('404'); // eslint-disable-line no-magic-numbers
@@ -39,7 +49,7 @@ const initApplication = () => {
 
 	const portByDefault = 8080;
 	const port = process.env.PORT || portByDefault;
-	app.listen(port, () => console.log(`\nApplication running on port: ${port}`)); // eslint-disable-line no-console
+	app.listen(port, () => console.log(`\nApplication running on: http://localhost:${port}${server.graphqlPath}`)); // eslint-disable-line no-console
 
 	// managing stop shutdown
 	process.on('SIGINT', () => {
