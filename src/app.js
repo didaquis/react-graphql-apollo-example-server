@@ -50,7 +50,7 @@ const initApplication = () => {
 		res.status(404).send('404'); // eslint-disable-line no-magic-numbers
 	});
 
-	const portByDefault = 8080;
+	const portByDefault = 4000;
 	const port = process.env.PORT || portByDefault;
 	app.listen(port, () => console.log(`\nApplication running on: http://localhost:${port}${server.graphqlPath}`)); // eslint-disable-line no-console
 
