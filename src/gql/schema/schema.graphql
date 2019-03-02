@@ -55,5 +55,5 @@ type Mutation {
 	actualizarCliente(input: ClienteInput): Cliente
 
 	""" Te permite eliminar un cliente """
-	eliminarCliente(id: ID): String
+	eliminarCliente(id: ID!): String
 }
