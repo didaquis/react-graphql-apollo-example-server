@@ -86,6 +86,13 @@ query {
 }
 ```
 
+Example of query:
+```
+query {
+  totalClientes
+}
+```
+
 Example of query (use a valid id):
 ```
 query {

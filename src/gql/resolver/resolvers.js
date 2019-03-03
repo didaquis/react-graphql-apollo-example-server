@@ -15,6 +15,17 @@ module.exports = {
 					}
 				});
 			});
+		},
+		totalClientes: (root) => {
+			return new Promise((resolve, reject) => {
+				Clientes.countDocuments({}, (error, count) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(count);
+					}
+				});
+			});
 		}
 	},
 	Mutation: {
