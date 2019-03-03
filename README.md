@@ -77,6 +77,15 @@ query {
 }
 ```
 
+Example of query:
+```
+query {
+  getClientes(limite: 3, offset: 3){
+    id
+  }
+}
+```
+
 Example of query (use a valid id):
 ```
 query {

@@ -2,8 +2,8 @@ const { Clientes } = require('../../models/index');
 
 module.exports = {
 	Query: {
-		getClientes: (root, { limite }) => {
-			return Clientes.find({}).limit(limite);
+		getClientes: (root, { limite, offset }) => {
+			return Clientes.find({}).limit(limite).skip(offset);
 		},
 		getCliente: (root, { id }) => {
 			return new Promise((resolve, reject) => {

@@ -22,8 +22,8 @@ enum TipoCliente {
 }
 
 type Query {
-	""" Obten los datos de todos los clientes, opcionalmente puedes limitar el número de resultados """
-	getClientes(limite: Int): [Cliente]
+	""" Obten los datos de todos los clientes, opcionalmente puedes limitar el número de resultados y la paginación """
+	getClientes(limite: Int, offset: Int): [Cliente]
 
 	""" Obten los datos de un cliente (especificando su id) """
 	getCliente(id: ID!): Cliente
