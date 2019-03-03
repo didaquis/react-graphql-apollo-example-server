@@ -36,8 +36,8 @@ type Query {
 input ClienteInput {
 	id: ID
 	nombre: String!
-	apellido: String!
-	empresa: String!
+	apellido: String
+	empresa: String
 	email: String!
 	tipo: TipoCliente!
 	pedidos: [PedidoInput]

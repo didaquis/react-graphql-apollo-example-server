@@ -8,7 +8,13 @@ module.exports = new Schema({
 	},
 	apellido: String,
 	empresa: String,
-	email: String,
-	tipo: String,
+	email: { 
+		type: String,
+		required: true
+	},
+	tipo: { 
+		type: String,
+		required: true
+	},
 	pedidos: Array
 });
