@@ -20,12 +20,12 @@ This repository is made to work with: https://github.com/didaquis/react-graphql-
 * For run app: `npm run dev`
 * For run linter: `npm run lint`
 
-Example of mutation (returns an id):
+Example of mutation:
 ```
 mutation {
   crearCliente(input: {
     nombre: "Dídac"
-  	apellido: "García"
+    apellido: "García"
     empresa: "ACME"
     email: "d.g@acme.com"
     tipo: BASICO
@@ -46,6 +46,22 @@ mutation {
       producto
       precio
     }
+  }
+}
+```
+
+Example of mutation:
+```
+mutation {
+  nuevoProducto(input: {
+    nombre: "Impresora"
+    precio: 63
+    stock: 31
+  }) {
+    id
+    nombre
+    precio
+    stock
   }
 }
 ```

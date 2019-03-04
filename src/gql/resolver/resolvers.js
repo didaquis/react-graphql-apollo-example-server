@@ -1,4 +1,4 @@
-const { Clientes } = require('../../models/index');
+const { Clientes, Productos } = require('../../models/index');
 
 module.exports = {
 	Query: {
@@ -69,6 +69,29 @@ module.exports = {
 						reject(error);
 					} else {
 						resolve('Se ha eliminado el cliente');
+					}
+				});
+			});
+		},
+
+
+
+		// productos
+		nuevoProducto: (root, { input }) => {
+			const nuevoProducto = new Productos({
+				nombre: input.nombre,
+				precio: input.precio,
+				stock: input.stock
+			});
+
+			nuevoProducto.id = nuevoProducto._id;
+
+			return new Promise((resolve, reject) => {
+				nuevoProducto.save((error) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(nuevoProducto);
 					}
 				});
 			});

@@ -9,6 +9,14 @@ type Cliente {
 	pedidos: [Pedido]
 }
 
+""" Producto """
+type Producto {
+	id: ID
+	nombre: String
+	precio: Int
+	stock: Int
+}
+
 """ Campos para definir un pedido """
 type Pedido {
 	producto: String
@@ -43,6 +51,14 @@ input ClienteInput {
 	pedidos: [PedidoInput]
 }
 
+""" Campos para definir un producto """
+input ProductoInput {
+	id: ID
+	nombre: String!
+	precio: Int!
+	stock: Int!
+}
+
 input PedidoInput {
 	producto: String
 	precio: Int
@@ -59,4 +75,9 @@ type Mutation {
 
 	""" Te permite eliminar un cliente """
 	eliminarCliente(id: ID!): String
+
+
+	# productos
+	""" Te permite crear nuevos productos """
+	nuevoProducto(input: ProductoInput): Producto
 }

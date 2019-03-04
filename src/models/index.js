@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
-const { ClienteSchema } = require('./schemas');
+const { ClienteSchema, ProductoSchema } = require('./schemas');
 
 module.exports = {
-	Clientes: mongoose.model('clientes', ClienteSchema)
+	Clientes: mongoose.model('clientes', ClienteSchema),
+	Productos: mongoose.model('productos', ProductoSchema)
 };

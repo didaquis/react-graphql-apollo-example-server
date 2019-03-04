@@ -16,6 +16,8 @@ if (mongoUser !== '' && mongoPass !== '') {
 	mongoose.connect(`mongodb://${host}:${port}/${database}`, { useNewUrlParser: true });
 }
 
+// mongoose.set('setFindAndModify', false); // Prevent DeprecationWarning: collection.findAndModify is deprecated
+
 const db = mongoose.connection;
 db.on('error', (err) => {
 	console.error(`\nConnection error with database. ${err}`); // eslint-disable-line no-console
