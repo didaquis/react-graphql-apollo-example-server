@@ -16,7 +16,7 @@ module.exports = {
 				});
 			});
 		},
-		totalClientes: (root) => {
+		totalClientes: () => {
 			return new Promise((resolve, reject) => {
 				Clientes.countDocuments({}, (error, count) => {
 					if (error) {
@@ -26,6 +26,9 @@ module.exports = {
 					}
 				});
 			});
+		},
+		obtenerProductos: (root, { limite, offset }) => {
+			return Productos.find({}).limit(limite).skip(offset);
 		}
 	},
 	Mutation: {

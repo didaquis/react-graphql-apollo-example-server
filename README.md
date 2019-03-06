@@ -85,6 +85,18 @@ mutation {
 Example of query:
 ```
 query {
+  obtenerProductos {
+    id
+    nombre
+    precio
+    stock
+  }
+}
+```
+
+Example of query:
+```
+query {
   getClientes {
     id
     nombre

@@ -1,6 +1,6 @@
 {
   "name": "react-graphql-apollo-example-server",
-  "version": "0.3.26",
+  "version": "0.3.27",
   "description": "react-graphql-apollo-example-server",
   "main": "src/app.js",
   "scripts": {

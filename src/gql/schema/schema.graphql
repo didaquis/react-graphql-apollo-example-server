@@ -38,6 +38,11 @@ type Query {
 
 	""" Obtén el número total de clientes registrados en la base de datos """
 	totalClientes: String
+
+
+	# Productos
+	""" Obtén los datos de todos los productos, opcionalmente puedes limitar el número de resultados y la paginación """
+	obtenerProductos(limite: Int, offset: Int): [Producto]
 }
 
 """ Campos para definir un cliente """
