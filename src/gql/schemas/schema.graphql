@@ -69,7 +69,6 @@ input PedidoInput {
 	precio: Int
 }
 
-""" Mutation para crear nuevos clientes """
 type Mutation {
 	""" Te permite crear nuevos clientes """
 	# Nombre del resolver (Input con datos): Valor que retorna
