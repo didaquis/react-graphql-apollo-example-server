@@ -36,8 +36,8 @@ const initApplication = () => {
 
 	const { ApolloServer } = require('apollo-server-express');
 
-	const typeDefs = require('./gql/schema/schema'); /* GraphQL schema */
-	const resolvers = require('./gql/resolver/resolvers'); /* GraphQL resolvers */
+	const typeDefs = require('./gql/schemas/index'); /* GraphQL schema */
+	const resolvers = require('./gql/resolvers/index'); /* GraphQL resolvers */
 
 	const routesManager = require('./routes/routesManager');
 	app.use('', routesManager);
