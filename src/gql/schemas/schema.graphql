@@ -91,4 +91,7 @@ type Mutation {
 
 	""" Te permite actualizar los datos de un producto """
 	actualizarProducto(input: ProductoInput): Producto
+
+	""" Te permite eliminar un producto """
+	eliminarProducto(id: ID!): String
 }

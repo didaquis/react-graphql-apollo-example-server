@@ -25,7 +25,6 @@ This repository is made to work with: https://github.com/didaquis/react-graphql-
 
 ### Querys
 
-Example of query:
 ```
 query {
   obtenerProductos {
@@ -37,7 +36,6 @@ query {
 }
 ```
 
-Example of query:
 ```
 query {
   getClientes {
@@ -48,7 +46,6 @@ query {
 }
 ```
 
-Example of query:
 ```
 query {
   getClientes(limite: 3, offset: 3){
@@ -57,14 +54,12 @@ query {
 }
 ```
 
-Example of query:
 ```
 query {
   totalClientes
 }
 ```
 
-Example of query (use a valid id):
 ```
 query {
   getCliente (id: "5c69e674263fbe7abfb624a3"){
@@ -74,7 +69,6 @@ query {
 }
 ```
 
-Example of query (use a valid id):
 ```
 query {
   obtenerProducto (id: "5c7dadc738fefed92d1f1e2b"){
@@ -88,7 +82,6 @@ query {
 
 ### Mutations
 
-Example of mutation:
 ```
 mutation {
   crearCliente(input: {
@@ -118,7 +111,6 @@ mutation {
 }
 ```
 
-Example of mutation:
 ```
 mutation {
   nuevoProducto(input: {
@@ -134,7 +126,6 @@ mutation {
 }
 ```
 
-Example of mutation (use a valid id):
 ```
 mutation {
   actualizarCliente (input: {
@@ -150,7 +141,6 @@ mutation {
 }
 ```
 
-Example of mutation (use a valid id):
 ```
 mutation {
   actualizarProducto (input: {
@@ -166,9 +156,15 @@ mutation {
 }
 ```
 
-Example of mutation (use a valid id):
 ```
 mutation {
   eliminarCliente (id: "5c69e674263fbe7abfb624a3")
 }
 ```
+
+```
+mutation {
+  eliminarProducto(id: "5c83ef0954d0cd1922dda2ca")
+}
+```
+

@@ -47,6 +47,17 @@ module.exports = {
 					}
 				});
 			});
-		} 
+		},
+		eliminarProducto: (root, { id }) => {
+			return new Promise((resolve, reject) => {
+				Productos.findOneAndDelete({ _id: id }, (error) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve('Se ha eliminado el producto');
+					}
+				});
+			});
+		}
 	}
 };
