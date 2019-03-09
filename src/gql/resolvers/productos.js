@@ -4,6 +4,17 @@ module.exports = {
 	Query: {
 		obtenerProductos: (root, { limite, offset }) => {
 			return Productos.find({}).limit(limite).skip(offset);
+		},
+		obtenerProducto: (root, { id }) => {
+			return new Promise((resolve, reject) => {
+				Productos.findById(id, (error, producto) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(producto);
+					}
+				});
+			});
 		}
 	},
 	Mutation: {

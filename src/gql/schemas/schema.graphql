@@ -43,6 +43,9 @@ type Query {
 	# Productos
 	""" Obtén los datos de todos los productos, opcionalmente puedes limitar el número de resultados y la paginación """
 	obtenerProductos(limite: Int, offset: Int): [Producto]
+
+	""" Obtén los datos de un producto (especificando su id) """
+	obtenerProducto(id: ID!): Producto
 }
 
 """ Campos para definir un cliente """

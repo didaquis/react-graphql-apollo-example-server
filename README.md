@@ -131,6 +131,18 @@ query {
 }
 ```
 
+Example of query (use a valid id):
+```
+query {
+  obtenerProducto (id: "5c7dadc738fefed92d1f1e2b"){
+    id
+    nombre
+    precio
+    stock
+  }
+}
+```
+
 Example of mutation (use a valid id):
 ```
 mutation {
