@@ -15,6 +15,17 @@ module.exports = {
 					}
 				});
 			});
+		},
+		totalProductos: () => {
+			return new Promise((resolve, reject) => {
+				Productos.countDocuments({}, (error, count) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(count);
+					}
+				});
+			});
 		}
 	},
 	Mutation: {
