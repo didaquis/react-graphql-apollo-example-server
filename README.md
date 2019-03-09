@@ -20,6 +20,74 @@ This repository is made to work with: https://github.com/didaquis/react-graphql-
 * For run app: `npm run dev`
 * For run linter: `npm run lint`
 
+
+## Some examples of querys and mutations
+
+### Querys
+
+Example of query:
+```
+query {
+  obtenerProductos {
+    id
+    nombre
+    precio
+    stock
+  }
+}
+```
+
+Example of query:
+```
+query {
+  getClientes {
+    id
+    nombre
+    apellido
+  }
+}
+```
+
+Example of query:
+```
+query {
+  getClientes(limite: 3, offset: 3){
+    id
+  }
+}
+```
+
+Example of query:
+```
+query {
+  totalClientes
+}
+```
+
+Example of query (use a valid id):
+```
+query {
+  getCliente (id: "5c69e674263fbe7abfb624a3"){
+    id
+    nombre
+  }
+}
+```
+
+Example of query (use a valid id):
+```
+query {
+  obtenerProducto (id: "5c7dadc738fefed92d1f1e2b"){
+    id
+    nombre
+    precio
+    stock
+  }
+}
+```
+
+### Mutations
+
 Example of mutation:
 ```
 mutation {
@@ -82,60 +150,15 @@ mutation {
 }
 ```
 
-Example of query:
+Example of mutation (use a valid id):
 ```
-query {
-  obtenerProductos {
-    id
-    nombre
-    precio
-    stock
-  }
-}
-```
-
-Example of query:
-```
-query {
-  getClientes {
-    id
-    nombre
-    apellido
-  }
-}
-```
-
-Example of query:
-```
-query {
-  getClientes(limite: 3, offset: 3){
-    id
-  }
-}
-```
-
-Example of query:
-```
-query {
-  totalClientes
-}
-```
-
-Example of query (use a valid id):
-```
-query {
-  getCliente (id: "5c69e674263fbe7abfb624a3"){
-    id
-    nombre
-  }
-}
-```
-
-Example of query (use a valid id):
-```
-query {
-  obtenerProducto (id: "5c7dadc738fefed92d1f1e2b"){
-    id
+mutation {
+  actualizarProducto (input: {
+    id: "5c7dadc738fefed92d1f1e2b"
+    nombre:"Cafetera"
+    precio: 99
+    stock: 180
+  }) {
     nombre
     precio
     stock

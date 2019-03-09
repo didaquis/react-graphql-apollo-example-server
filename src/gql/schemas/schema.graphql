@@ -30,6 +30,7 @@ enum TipoCliente {
 }
 
 type Query {
+	# clientes
 	""" Obtén los datos de todos los clientes, opcionalmente puedes limitar el número de resultados y la paginación """
 	getClientes(limite: Int, offset: Int): [Cliente]
 
@@ -73,8 +74,8 @@ input PedidoInput {
 }
 
 type Mutation {
+	# clientes
 	""" Te permite crear nuevos clientes """
-	# Nombre del resolver (Input con datos): Valor que retorna
 	crearCliente(input: ClienteInput): Cliente
 
 	""" Te permite actualizar los datos de un cliente """
@@ -87,4 +88,7 @@ type Mutation {
 	# productos
 	""" Te permite crear nuevos productos """
 	nuevoProducto(input: ProductoInput): Producto
+
+	""" Te permite actualizar los datos de un producto """
+	actualizarProducto(input: ProductoInput): Producto
 }

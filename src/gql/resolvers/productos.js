@@ -36,6 +36,17 @@ module.exports = {
 					}
 				});
 			});
-		}
+		},
+		actualizarProducto: (root, { input }) => {
+			return new Promise((resolve, reject) => {
+				Productos.findOneAndUpdate({ _id: input.id }, input, { new: true }, (error, producto) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(producto);
+					}
+				});
+			});
+		} 
 	}
 };
