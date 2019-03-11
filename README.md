@@ -21,9 +21,9 @@ This repository is made to work with: https://github.com/didaquis/react-graphql-
 * For run linter: `npm run lint`
 
 
-## Some examples of querys and mutations
+## Some examples of queries and mutations
 
-### Querys
+### Queries
 
 ```
 query {
