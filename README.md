@@ -168,3 +168,33 @@ mutation {
 }
 ```
 
+```
+mutation nuevoPedido($input: PedidoInput){
+  nuevoPedido(input: $input) {
+    id
+    pedido {
+      id
+      cantidad
+    }
+    total
+    fecha
+    cliente
+    estado
+  }
+}
+
+// query variables
+{
+  "input": {
+    "cliente": "5c7c05fc646beb5f1f8330f2",
+    "total": 42,
+    "pedido": [
+      {
+        "id": "5c7dadc738fefed92d1f1e2b",
+        "cantidad": 2
+      }
+    ]
+  }
+}
+```
+
