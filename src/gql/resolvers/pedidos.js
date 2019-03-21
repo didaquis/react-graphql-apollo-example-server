@@ -1,4 +1,4 @@
-const { Pedidos } = require('../../models/index');
+const { Pedidos, Productos } = require('../../models/index');
 
 module.exports = {
 	Mutation: {
@@ -14,6 +14,17 @@ module.exports = {
 			nuevoPedido.id = nuevoPedido._id;
 
 			return new Promise((resolve, reject) => {
+
+				// Restamos el stock (observa el signo negativo delante de la cantidad)
+				input.pedido.forEach(pedido => {
+					Productos.updateOne({ _id: pedido.id },
+						{ '$inc':
+							{ 'stock': -pedido.cantidad }
+						}, function (error) {
+							if (error) return new Error(error);
+						} );
+				});
+
 				nuevoPedido.save((error) => {
 					if (error) {
 						reject(error);
