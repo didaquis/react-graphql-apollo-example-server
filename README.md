@@ -175,6 +175,7 @@ mutation nuevoPedido($input: PedidoInput){
     pedido {
       id
       cantidad
+      precio
     }
     total
     fecha
@@ -191,7 +192,8 @@ mutation nuevoPedido($input: PedidoInput){
     "pedido": [
       {
         "id": "5c7dadc738fefed92d1f1e2b",
-        "cantidad": 2
+        "cantidad": 2,
+        "precio": 24
       }
     ]
   }

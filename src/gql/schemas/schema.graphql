@@ -28,8 +28,9 @@ type Pedido {
 
 """ Producto en un pedido """
 type PedidoProducto {
-	id: ID
-	cantidad: Int
+	id: ID!
+	cantidad: Int!
+	precio: Int!
 }
 
 type Query {
@@ -113,8 +114,9 @@ input PedidoInput {
 
 """ Campos para definir un producto en un pedido """
 input PedidoProductoInput {
-	id: ID
-	cantidad: Int
+	id: ID!
+	cantidad: Int!
+	precio: Int!
 }
 
 """ Asigna la categoría del Cliente """
