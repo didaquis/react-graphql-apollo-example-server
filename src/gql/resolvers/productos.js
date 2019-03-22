@@ -2,8 +2,12 @@ const { Productos } = require('../../models/index');
 
 module.exports = {
 	Query: {
-		obtenerProductos: (root, { limite, offset }) => {
-			return Productos.find({}).limit(limite).skip(offset);
+		obtenerProductos: (root, { limite, offset, hasStock }) => {
+			let filtro;
+			if (hasStock) {
+				filtro = { stock: { $gt: 0 } };
+			}
+			return Productos.find(filtro).limit(limite).skip(offset);
 		},
 		obtenerProducto: (root, { id }) => {
 			return new Promise((resolve, reject) => {
