@@ -46,6 +46,17 @@ module.exports = {
 					}
 				});
 			});
+		},
+		actualizarEstado: (root, { input } ) => {
+			return new Promise((resolve, reject) => {
+				Pedidos.findOneAndUpdate({ _id: input.id }, input, {new: true}, (error) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve('Se actualizó correctamente');
+					}
+				});
+			});
 		}
 	}
 };

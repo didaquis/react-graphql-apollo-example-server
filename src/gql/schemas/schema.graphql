@@ -86,6 +86,9 @@ type Mutation {
 	# pedidos
 	""" Te permite crear nuevos pedidos """
 	nuevoPedido(input: PedidoInput): Pedido
+
+	""" Te permite actualizar el estado de un pedido """
+	actualizarEstado(input: PedidoInput!): String
 }
 
 """ Campos para definir un cliente """
