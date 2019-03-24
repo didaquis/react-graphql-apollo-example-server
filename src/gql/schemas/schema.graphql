@@ -45,7 +45,7 @@ type Query {
 	totalClientes: String
 
 
-	# Productos
+	# productos
 	""" Obtén los datos de todos los productos, opcionalmente puedes limitar el número de resultados y la paginación """
 	obtenerProductos(limite: Int, offset: Int, hasStock: Boolean): [Producto]
 
@@ -54,6 +54,11 @@ type Query {
 
 	""" Obtén el número total de productos registrados en la base de datos """
 	totalProductos: String
+
+
+	# pedidos
+	""" Obtén los datos de todos los pedidos filtrados por cliente """
+	obtenerPedidos(clienteId: String!): [Pedido]
 }
 
 type Mutation {

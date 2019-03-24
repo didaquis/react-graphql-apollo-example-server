@@ -1,6 +1,19 @@
 const { Pedidos, Productos } = require('../../models/index');
 
 module.exports = {
+	Query: {
+		obtenerPedidos: (root, { clienteId }) => {
+			return new Promise((resolve, reject) => {
+				Pedidos.find({ cliente: clienteId }, (error, pedidos) => {
+					if (error) {
+						reject(error);
+					} else {
+						resolve(pedidos);
+					}
+				});
+			});
+		}
+	},
 	Mutation: {
 		nuevoPedido: (root, { input }) => {
 			const nuevoPedido = new Pedidos({
