@@ -15,7 +15,7 @@ module.exports = new Schema({
 		required: true
 	},
 	cliente: { 
-		type: String,
+		type: mongoose.Types.ObjectId,
 		required: true
 	},
 	estado: { 
