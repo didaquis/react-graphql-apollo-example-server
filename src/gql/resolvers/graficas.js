@@ -2,7 +2,7 @@ const { Pedidos } = require('../../models/index');
 
 module.exports = {
 	Query: {
-		topClientes: (root) => {
+		topClientes: () => {
 			return new Promise((resolve, reject) => {
 				Pedidos.aggregate([
 					{ 
