@@ -29,6 +29,7 @@ type Pedido {
 """ Producto en un pedido """
 type PedidoProducto {
 	id: ID!
+	nombre: String!
 	cantidad: Int!
 	precio: Int!
 }
@@ -132,6 +133,7 @@ input PedidoInput {
 """ Campos para definir un producto en un pedido """
 input PedidoProductoInput {
 	id: ID!
+	nombre: String!
 	cantidad: Int!
 	precio: Int!
 }
