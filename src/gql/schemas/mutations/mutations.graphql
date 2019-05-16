@@ -26,4 +26,8 @@ type Mutation {
 
 	""" Te permite actualizar el estado de un pedido """
 	actualizarEstado(input: PedidoInput!): String
+
+	# usuarios
+	""" Te permite crear un nuevo usuario """
+	crearUsuario(usuario: String!, password: String!): String
 }

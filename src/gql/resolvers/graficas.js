@@ -1,4 +1,4 @@
-const { Pedidos } = require('../../models/index');
+const { Pedidos } = require('../../data/models/index');
 
 module.exports = {
 	Query: {
