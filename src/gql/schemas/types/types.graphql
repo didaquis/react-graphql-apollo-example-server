@@ -39,3 +39,8 @@ type ClienteTotal {
 	total: Float
 	cliente: [Cliente]
 }
+
+""" Token """
+type Token {
+	token: String
+}
