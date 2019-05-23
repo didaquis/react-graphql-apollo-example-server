@@ -34,19 +34,32 @@ const initApplication = () => {
 	const app = express();
 	app.use(cors());
 
+	const jwt = require('jsonwebtoken');
+	const secreto = process.env.SECRET;
+
 	const { ApolloServer } = require('apollo-server-express');
 
-	const typeDefs = require('./gql/schemas/index'); /* GraphQL schema */
-	const resolvers = require('./gql/resolvers/index'); /* GraphQL resolvers */
+	const typeDefs = require('./gql/schemas/index');
+	const resolvers = require('./gql/resolvers/index');
 
 	const routesManager = require('./routes/routesManager');
 	app.use('', routesManager);
 
-	const server = new ApolloServer({ typeDefs, resolvers });
+	const server = new ApolloServer({ typeDefs, resolvers, context: async ({ req }) => {
+		const token = req.headers['authorization'];
+		if (token !== 'null') { /* Check 'null' as a string! */
+			try {
+				const usuarioActual = await jwt.verify(token, secreto);
+				req.usuarioActual = usuarioActual;
+
+				return { usuarioActual };
+			} catch (error) {
+				console.error(error); // eslint-disable-line no-console
+			}
+		}
+	}});
 
 	server.applyMiddleware({app});
-
-
 
 	app.use((req, res) => {
 		res.status(404).send('404'); // eslint-disable-line no-magic-numbers

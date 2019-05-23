@@ -6,7 +6,13 @@ require('dotenv').config();
 
 module.exports = {
 	Query: {
-		
+		obtenerUsuario: async (root, args, context) => {
+			if (!context.usuarioActual) {
+				return null;
+			}
+			const usuario = await Usuarios.findOne({ usuario: context.usuarioActual.usuario });
+			return usuario;
+		}
 	},
 	Mutation: {
 		crearUsuario: async (root, { usuario, password }) => {

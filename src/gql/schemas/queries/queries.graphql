@@ -9,6 +9,7 @@ type Query {
 	""" Obtén el número total de clientes registrados en la base de datos """
 	totalClientes: String
 
+
 	# productos
 	""" Obtén los datos de todos los productos, opcionalmente puedes limitar el número de resultados y la paginación """
 	obtenerProductos(limite: Int, offset: Int, hasStock: Boolean): [Producto]
@@ -24,7 +25,13 @@ type Query {
 	""" Obtén los datos de todos los pedidos filtrados por cliente """
 	obtenerPedidos(clienteId: String!): [Pedido]
 
+
 	# gráficas
 	""" Obtén el top 10 clientes ordenados por dinero que han gastado """
 	topClientes: [ClienteTotal]
+
+
+	# usuarios
+	""" Recupera los datos de un usuario """
+	obtenerUsuario: Usuario
 }

@@ -20,12 +20,14 @@ type Mutation {
 	""" Te permite eliminar un producto """
 	eliminarProducto(id: ID!): String
 
+
 	# pedidos
 	""" Te permite crear nuevos pedidos """
 	nuevoPedido(input: PedidoInput): Pedido
 
 	""" Te permite actualizar el estado de un pedido """
 	actualizarEstado(input: PedidoInput!): String
+
 
 	# usuarios
 	""" Te permite crear un nuevo usuario """
