@@ -1,5 +1,5 @@
 const { Usuarios } = require('../../data/models/index');
-const { crearToken } = require('../../utils/token');
+const { crearToken } = require('../../utils/utils');
 
 const bcrypt = require('bcrypt');
 require('dotenv').config();

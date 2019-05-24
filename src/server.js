@@ -37,6 +37,8 @@ const initApplication = () => {
 	const jwt = require('jsonwebtoken');
 	const secreto = process.env.SECRET;
 
+	const { getListOfIPV4Address } = require('./utils/utils');
+
 	const { ApolloServer } = require('apollo-server-express');
 
 	const typeDefs = require('./gql/schemas/index');
@@ -67,7 +69,11 @@ const initApplication = () => {
 
 	const portByDefault = 4000;
 	const port = process.env.PORT || portByDefault;
-	app.listen(port, () => console.log(`\nApplication running on: http://localhost:${port}${server.graphqlPath}`)); // eslint-disable-line no-console
+	app.listen(port, () => {
+		getListOfIPV4Address().forEach(ip => {
+			console.log(`Application running on: http://${ip}:${port}${server.graphqlPath}`); // eslint-disable-line no-console
+		});
+	});
 
 	// managing stop shutdown
 	process.on('SIGINT', () => {
